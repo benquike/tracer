@@ -97,7 +97,7 @@ class Tracer(object):
         self.preconstrain_flag = preconstrain_flag
         self.simprocedures = {} if simprocedures is None else simprocedures
         self._hooks = {} if hooks is None else hooks
-        self.input_max_size = max_size or len(input)
+        self.input_max_size = max_size or if input is None else len(input)
         self.exclude_sim_procedures_list = ["malloc","free","calloc","realloc"] if exclude_sim_procedures_list is None else exclude_sim_procedures_list
         self.argv = argv or [binary]
         self.trace_log_limit = trace_log_limit
